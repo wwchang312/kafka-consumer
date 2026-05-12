@@ -32,10 +32,10 @@ jobs:
         aws-region: ap-northeast-2
 
     - name: upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./kafka-consumers.tar.gz s3://datalake-actions-deploy-wwchang/kafka-consumers/kafka-consumers.tar.gz
+      run: aws s3 cp --region ap-northeast-2 ./kafka-consumers.tar.gz s3://datalake-actions-deploy-wwchang/kafka-consumer/kafka-consumers.tar.gz
 
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
         --application-name datalake-deploy
         --deployment-group-name kafka-deploy-consumers
-        --s3-location bucket=datalake-actions-deploy-wwchang,bundleType=tgz,key=kafka-consumers/kafka-consumers.tar.gz
+        --s3-location bucket=datalake-actions-deploy-wwchang,bundleType=tgz,key=kafka-consumer/kafka-consumers.tar.gz
