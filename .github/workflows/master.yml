@@ -37,5 +37,5 @@ jobs:
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
         --application-name datalake-deploy
-        --deployment-group-name kafka-deploy-consumers
+        --deployment-group-name kafka-deploy-consumer
         --s3-location bucket=datalake-actions-deploy-wwchang,bundleType=tgz,key=kafka-consumer/kafka-consumers.tar.gz
